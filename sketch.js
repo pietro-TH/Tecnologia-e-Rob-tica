@@ -1,5 +1,5 @@
 //variáveis da bolinha
-let xBolinha = 100;
+let xPietro = 100;
 let yBolinha = 200;
 let diametro = 20;
 let raio = diametro / 2;
@@ -31,7 +31,7 @@ function setup() {
 
 function draw() {
     background(0);
-    mostraBolinha();
+    mostraPietro();
     movimentaBolinha();
     verificaColisaoBorda();
     mostraRaquete(xRaquete, yRaquete);
@@ -43,17 +43,17 @@ function draw() {
     incluiPlacar() 
     marcaPonto();
 }
-function mostraBolinha() {
-  circle(xBolinha, yBolinha, diametro);
+function mostraPietro() hb{
+  circle(xPietro, yBolinha, diametro);
 }
 
 function movimentaBolinha() {
-  xBolinha += velocidadeXBolinha;
+  xPietro += velocidadeXBolinha;
   yBolinha += velocidadeYBolinha;
 }
 
 function verificaColisaoBorda() {
-  if (xBolinha + raio > width || xBolinha - raio < 0) {
+  if (xPietro + raio > width || xBolinha - raio < 0) {
     velocidadeXBolinha *= -1;
   }
   if (yBolinha + raio > height || yBolinha - raio < 0) {
@@ -75,7 +75,7 @@ function movimentaMinhaRaquete() {
 }
 
 function verificaColisaoRaquete() {
-  if (xBolinha - raio < xRaquete + raqueteComprimento && yBolinha - raio < yRaquete + raqueteAltura && yBolinha + raio > yRaquete) {
+  if (xPietro - raio < xRaquete + raqueteComprimento && yBolinha - raio < yRaquete + raqueteAltura && yBolinha + raio > yRaquete) {
     velocidadeXBolinha *= -1;
   }
 }
@@ -112,10 +112,10 @@ function incluiPlacar(){
 
 
 function marcaPonto() {
-  if (xBolinha > 580) {
+  if (xPietro > 580) {
     meusPontos += 1;
   }
-  if (xBolinha < 10) {
+  if (xPietro < 10) {
     pontosDoOponente += 1;
   }
 }
